@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8853039080239291807}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,6 +137,7 @@ MonoBehaviour:
   startTimeBtwShots: 1
   projectile: {fileID: 3064431620442784074, guid: 8831fcc8f724bd94e89ab63a6d3a5a9c,
     type: 3}
+  sightRange: 0
 --- !u!54 &8853039080239291807
 Rigidbody:
   m_ObjectHideFlags: 0
