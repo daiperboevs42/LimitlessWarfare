@@ -11,6 +11,8 @@ public class EnemyAIv2Test : MonoBehaviour
     public float startTimeBtwShots;
     public GameObject projectile;
     private Transform player;
+    private bool isDetected = false;
+    public float sightRange;
 
     // Start is called before the first frame update
     void Start()
@@ -27,22 +29,36 @@ public class EnemyAIv2Test : MonoBehaviour
             navMeshAgent.SetDestination(targetVector);
     }
 
+    void DetectEnemy()
+    {
+        float dist = Vector3.Distance(player.transform.position, transform.position);
+
+        if (dist < sightRange)
+            isDetected = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        SetDestination();
-
-        if (timeBtwShots <= 0)
+        if (!isDetected)
+            DetectEnemy();
+        else if (isDetected)
         {
-            Instantiate(projectile, transform.position, Quaternion.identity);
-            //Quaternion == no rotation basically  ¯\_(ツ)_/¯
+            SetDestination();
 
-            //ensures that enemy doesnt shoot every frame
-            timeBtwShots = startTimeBtwShots;
+            if (timeBtwShots <= 0)
+            {
+                Instantiate(projectile, transform.position, Quaternion.identity);
+                //Quaternion == no rotation basically  ¯\_(ツ)_/¯
+
+                //ensures that enemy doesnt shoot every frame
+                timeBtwShots = startTimeBtwShots;
+            }
+            else
+            {
+                timeBtwShots -= Time.deltaTime;
+            }
         }
-        else
-        {
-            timeBtwShots -= Time.deltaTime;
-        }
+        
     }
 }
