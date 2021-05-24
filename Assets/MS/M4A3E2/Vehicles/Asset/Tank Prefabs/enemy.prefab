@@ -3101,6 +3101,8 @@ MonoBehaviour:
   m_ExplosionPrefab: {fileID: 151086, guid: ee49a9a8678ecf8468eb488e1ac8d42b, type: 3}
   m_ExplosionAudio: {fileID: 4100770753395186209}
   m_explosionclip: {fileID: 8300000, guid: 5c27182a28a7eb942a362e6d198fe0e6, type: 3}
+  isPlayer: 0
+  manager: {fileID: 0}
 --- !u!114 &692808942
 MonoBehaviour:
   m_ObjectHideFlags: 0
