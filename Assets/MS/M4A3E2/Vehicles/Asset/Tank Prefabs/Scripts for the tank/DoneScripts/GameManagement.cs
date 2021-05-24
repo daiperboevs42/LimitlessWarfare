@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class GameManagement : MonoBehaviour
 {
     List<GameObject> listOfEnemies = new List<GameObject>();
@@ -11,20 +12,29 @@ public class GameManagement : MonoBehaviour
     public GameObject winCanvas;
     public GameObject restartCanvas;
     public GameObject winWinCanvas;
+    public GameObject canvasHolder;
+    private bool isGameOver = false;
+    public int nextScene;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         listOfEnemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
         print(listOfEnemies.Count);
-        
+        winCanvas.GetComponentInChildren<LevelChange>().nextScene = nextScene;
+
     }
+
+
+
 
     public void KilledEnemy(GameObject enemy)
     {
         if (listOfEnemies.Contains(enemy))
             listOfEnemies.Remove(enemy);
-
+        AreEnemiesDead();
         print(listOfEnemies.Count);
     }
 
@@ -51,20 +61,29 @@ public class GameManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (allEnemiesAreDead && !lastLevel)
+        if (!isGameOver)
         {
-            
-            //load win screen
-            winCanvas.gameObject.SetActive(true);
-        }
-        if (isPlayerDead)
-        {
-            //load death screen
-            restartCanvas.gameObject.SetActive(true);
-        }
-        if (allEnemiesAreDead && lastLevel)
-        {
-            winWinCanvas.gameObject.SetActive(true);
+            if (allEnemiesAreDead && !lastLevel)
+            {
+
+                //load win screen
+                canvasHolder = Instantiate(winCanvas);
+                isGameOver = true;
+                Debug.Log("THEY DEAD");
+            }
+            if (isPlayerDead)
+            {
+                //load death screen
+                canvasHolder = Instantiate(restartCanvas);
+                isGameOver = true;
+                Debug.Log("YOU DIED");
+            }
+            if (allEnemiesAreDead && lastLevel)
+            {
+                canvasHolder = Instantiate(winWinCanvas);
+                isGameOver = true;
+            }
         }
     }
+
 }
