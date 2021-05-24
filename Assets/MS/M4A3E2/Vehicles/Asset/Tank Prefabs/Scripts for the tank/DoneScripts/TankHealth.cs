@@ -21,6 +21,8 @@ namespace EndTank
 
         private float m_CurrentHealth;                      // How much health the tank currently has.
         private bool m_Dead;                                // Has the tank been reduced beyond zero health yet?
+        public bool isPlayer = false;
+        public GameObject manager;
         #endregion
 
         #region Builtin Methods
@@ -34,6 +36,8 @@ namespace EndTank
 
             // Disable the prefab so it can be activated when it's required.
             m_ExplosionParticles.gameObject.SetActive (false);
+
+            manager = GameObject.Find("GameManager");
         }
 
 
@@ -79,6 +83,10 @@ namespace EndTank
         {
             // Set the flag so that this function is only called once.
             m_Dead = true;
+            if (!isPlayer)
+                manager.GetComponent<GameManagement>().KilledEnemy(gameObject);
+            else if (isPlayer)
+                manager.GetComponent<GameManagement>().IsPlayerDead();
 
             // Move the instantiated explosion prefab to the tank's position and turn it on.
             m_ExplosionParticles.transform.position = transform.position;
