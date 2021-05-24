@@ -52,7 +52,8 @@ namespace EndTank
                 //targetRigidbody.AddExplosionForce (m_ExplosionForce, transform.position, m_ExplosionRadius);
 
                 // Find the TankHealth script associated with the rigidbody.
-                TankHealth targetHealth = targetRigidbody.GetComponent<TankHealth> ();
+                colliders[i].gameObject.GetComponent<TankHealth>().TakeDamage(15);
+                /*TankHealth targetHealth = targetRigidbody.GetComponent<TankHealth> ();
                 
                 // If there is no TankHealth script attached to the gameobject, go on to the next collider.
                 if (!targetHealth)
@@ -62,7 +63,7 @@ namespace EndTank
                 //float damage = CalculateDamage (targetRigidbody.position);
 
                 // Deal this damage to the tank.
-                targetHealth.TakeDamage (5);
+                targetHealth.TakeDamage (5);*/
             }
 
             // Unparent the particles from the shell. When shell explode we want to move it from the scene. 
