@@ -762,7 +762,7 @@ MonoBehaviour:
   restartCanvas: {fileID: 4305857029520133391, guid: 7d0721663ef7a2e4187ce3043dd81040, type: 3}
   winWinCanvas: {fileID: 0}
   canvasHolder: {fileID: 0}
-  nextScene: 1
+  nextScene: 2
 --- !u!82 &1197839059
 AudioSource:
   m_ObjectHideFlags: 0
