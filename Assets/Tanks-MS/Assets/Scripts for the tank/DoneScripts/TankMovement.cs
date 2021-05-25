@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace EndTank
+namespace LimitlessWarfare
 {
     [RequireComponent(typeof(Rigidbody))]
     public class TankMovement : MonoBehaviour

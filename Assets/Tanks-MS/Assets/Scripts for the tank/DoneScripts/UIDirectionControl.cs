@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace EndTank
+namespace LimitlessWarfare
 {
     public class UIDirectionControl : MonoBehaviour
     {

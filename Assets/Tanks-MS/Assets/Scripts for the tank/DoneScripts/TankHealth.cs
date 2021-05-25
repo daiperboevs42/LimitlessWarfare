@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace EndTank
+namespace LimitlessWarfare
 {
     public class TankHealth : MonoBehaviour
     {
