@@ -232,7 +232,7 @@ PrefabInstance:
       objectReference: {fileID: 963194227}
     - target: {fileID: 1039066118, guid: 8846bb79708a1104084a9cb7ec76f488, type: 3}
       propertyPath: m_Speed
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1581718028, guid: 8846bb79708a1104084a9cb7ec76f488, type: 3}
       propertyPath: m_AnchorMax.x
