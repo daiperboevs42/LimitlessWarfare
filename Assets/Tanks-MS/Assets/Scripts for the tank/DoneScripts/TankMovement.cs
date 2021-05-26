@@ -39,8 +39,10 @@ namespace LimitlessWarfare
         private Vector3 finalTurretPointDir;
 
         #endregion
-        //explain
+        
+        //
         #region Properties
+        //explain
         private Vector3 pointerPosition;
         public Vector3 PointerPosition
         {

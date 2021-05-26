@@ -20,13 +20,7 @@ namespace LimitlessWarfare
         public float m_ExplosionRadius = 2.5f;                // The maximum distance away from the explosion tanks can be and are still affected.
         #endregion
 
-        private void Start ()
-        {
-            // If it isn't destroyed by then, destroy the shell after it's lifetime.
-           // Destroy (gameObject, m_MaxLifeTime);
-        }
-
-
+        #region Custom Methods
         private void OnTriggerEnter (Collider other)
         {
 
@@ -120,4 +114,5 @@ namespace LimitlessWarfare
             return damage;
         }
     }
+    #endregion
 }
