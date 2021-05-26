@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace EndTank
+namespace LimitlessWarfare
 {
     public class UIDirectionControl : MonoBehaviour
     {
@@ -8,8 +8,6 @@ namespace EndTank
         // elements such as the health bar face the correct direction.
 
         public bool m_UseRelativeRotation = true;       // Use relative rotation should be used for this gameobject?
-
-
         private Quaternion m_RelativeRotation;          // The local rotatation at the start of the scene.
 
         #region Builtin Methods

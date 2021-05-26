@@ -2,20 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-namespace EndTank
+
+namespace LimitlessWarfare
 {
     public class EnemyAI : MonoBehaviour
     {
+        #region Variables
+
+        [Header("Enemy Properties")]
         NavMeshAgent navMeshAgent;
         public float speed;
         private float timeBtwShots;
         public float startTimeBtwShots;
-       // public GameObject projectile;
         public GameObject player;
         private bool isDetected = false;
         public float sightRange;
 
-
+        [Header("Shoot Properties")]
         public Rigidbody m_Shell;
         public float m_launchForce = 20.0f;
 
@@ -37,35 +40,18 @@ namespace EndTank
 
         [Header("Audio Properties")]
         public AudioSource m_ShootingAudio;         // Reference to the audio source used to play the shooting audio. NB: different to the movement audio source.
-
         public AudioClip m_FireClip;
+        #endregion
 
-        // Start is called before the first frame update
+        #region Builtin Methods
         void Start()
         {
             navMeshAgent = this.GetComponent<NavMeshAgent>();
             navMeshAgent.speed = speed;
-            //player = GameObject.FindGameObjectWithTag("Player");
             timeBtwShots = startTimeBtwShots;
             m_OriginalPitch = m_MovementAudio.pitch;
-        }
-
-        void SetDestination()
-        {
-            Vector3 targetVector = player.transform.position;
-            navMeshAgent.SetDestination(targetVector);
-        }
-
-        void DetectEnemy()
-        {
-            float dist = Vector3.Distance(player.transform.position, transform.position);
-
-
-            if (dist < sightRange)
-                isDetected = true;
-        }
-
-        // Update is called once per frame
+        } 
+        
         void Update()
         {
             if (!isDetected)
@@ -88,6 +74,24 @@ namespace EndTank
             }
             EngineAudio();
         }
+        #endregion
+
+        #region Custom Methods
+
+        void SetDestination()
+        {
+            Vector3 targetVector = player.transform.position;
+            navMeshAgent.SetDestination(targetVector);
+        }
+
+        void DetectEnemy()
+        {
+            float dist = Vector3.Distance(player.transform.position, transform.position);
+
+
+            if (dist < sightRange)
+                isDetected = true;
+        }
 
         protected virtual void HandleTurret()
         {
@@ -103,6 +107,7 @@ namespace EndTank
 
             }
         }
+
 
         private void Shoot()
         {
@@ -147,5 +152,5 @@ namespace EndTank
             }
         }
     }
-    
+    #endregion
 }

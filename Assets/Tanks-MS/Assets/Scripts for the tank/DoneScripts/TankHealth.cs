@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace EndTank
+namespace LimitlessWarfare
 {
     public class TankHealth : MonoBehaviour
     {
-#region Variables
+        #region Variables
         [Header("Healtbar Properties")]
         public float m_StartingHealth = 100f;              
         public Slider m_Slider;                             // The slider to handles how much health the tank currently has.
@@ -17,6 +17,7 @@ namespace EndTank
         [Header("Explosion Properties")]
         public AudioSource m_ExplosionAudio;               // The audio source to play when the tank explodes.
         public AudioClip m_explosionclip;
+
         private ParticleSystem m_ExplosionParticles;        // The particle system the will play when the tank is destroyed.
 
         private float m_CurrentHealth;                      // How much health the tank currently has.

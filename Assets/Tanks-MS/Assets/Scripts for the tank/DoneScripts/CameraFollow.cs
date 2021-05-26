@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+namespace LimitlessWarfare
 {
-    public GameObject player;
-    public float cameraHeight = 30.0f;
-
-    void Update()
+    public class CameraFollow : MonoBehaviour
     {
-        Vector3 pos = player.transform.position;
-        pos.y += cameraHeight;
-        transform.position = pos;
+        [Header("Camera Properties")]
+        public GameObject player;
+        public float cameraHeight = 30.0f;
+
+        void Update()
+        {
+            Vector3 pos = player.transform.position;
+            pos.y += cameraHeight;
+            transform.position = pos;
+        }
     }
 }

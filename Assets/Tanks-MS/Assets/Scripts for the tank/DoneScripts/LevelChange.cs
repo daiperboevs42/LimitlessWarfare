@@ -4,19 +4,22 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LevelChange : MonoBehaviour
+namespace LimitlessWarfare
 {
-    public int nextScene;
-    // Start is called before the first frame update
-    void Start()
+    public class LevelChange : MonoBehaviour
     {
-        
-        GetComponent<Button>().onClick.AddListener(NextLevel);
-    }
+        public int nextScene;
+       
+        void Start()
+        {
 
-    public void NextLevel()
-    {
-        SceneManager.LoadScene(nextScene);
+            GetComponent<Button>().onClick.AddListener(NextLevel);
+        }
+
+        public void NextLevel()
+        {
+            SceneManager.LoadScene(nextScene);
+        }
+
     }
-    
 }

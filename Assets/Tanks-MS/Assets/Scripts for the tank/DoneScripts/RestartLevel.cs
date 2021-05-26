@@ -4,18 +4,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class RestartLevel : MonoBehaviour
+namespace LimitlessWarfare
 {
-    // Start is called before the first frame update
-    void Start()
+    public class RestartLevel : MonoBehaviour
     {
-        GetComponent<Button>().onClick.AddListener(Restart);
-    }
+       
+        void Start()
+        {
+            GetComponent<Button>().onClick.AddListener(Restart);
+        }
 
-    
-    public void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        //SceneManager.LoadScene(currentScene);
+
+        public void Restart()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            
+        }
     }
 }

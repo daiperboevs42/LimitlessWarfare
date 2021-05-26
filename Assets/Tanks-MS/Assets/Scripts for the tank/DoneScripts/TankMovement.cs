@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace EndTank
+namespace LimitlessWarfare
 {
     [RequireComponent(typeof(Rigidbody))]
     public class TankMovement : MonoBehaviour
@@ -39,8 +39,10 @@ namespace EndTank
         private Vector3 finalTurretPointDir;
 
         #endregion
-        //explain
+        
+        //
         #region Properties
+        //explain
         private Vector3 pointerPosition;
         public Vector3 PointerPosition
         {
