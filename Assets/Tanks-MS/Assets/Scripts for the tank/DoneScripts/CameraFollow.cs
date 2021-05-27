@@ -14,7 +14,7 @@ namespace LimitlessWarfare
         {
             Vector3 pos = player.transform.position;
             pos.y += cameraHeight;
-            transform.position = pos;
+            Camera.main.transform.position = pos;
         }
     }
 }
