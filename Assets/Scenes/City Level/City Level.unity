@@ -234,6 +234,14 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1039066121, guid: 8846bb79708a1104084a9cb7ec76f488, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039066122, guid: 8846bb79708a1104084a9cb7ec76f488, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1581718028, guid: 8846bb79708a1104084a9cb7ec76f488, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -3197,11 +3205,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b87016b8ae06a04eafc75d295b219c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastLevel: 1
   winCanvas: {fileID: 2827616743235467027, guid: c63c881e2cd5d76409f9f7dfd3e0128e, type: 3}
   restartCanvas: {fileID: 4305857029520133391, guid: 7d0721663ef7a2e4187ce3043dd81040, type: 3}
   winWinCanvas: {fileID: 8909296393927398501, guid: bd7d9d7f242d1674f8768e36c7ab4af3, type: 3}
   canvasHolder: {fileID: 0}
+  lastLevel: 1
   nextScene: 0
 --- !u!4 &1054217656
 Transform:
@@ -3229,7 +3237,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 2892361237580764309, guid: 7847364294b511148a8a9a2477c855e2, type: 2}
   m_audioClip: {fileID: 8300000, guid: 8ce5d020a687c314891341b4126d1de2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
